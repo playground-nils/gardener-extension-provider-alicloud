@@ -1,12 +1,11 @@
 name: Create Upgrade-Pull-Requests
-on:
+'on':
   schedule:
-    - cron: '*/10 * * * *'
-  workflow_dispatch:
-
+  - cron: '*/10 * * * *'
+  workflow_dispatch: null
 jobs:
   upgrade-pullrequests:
-    if: ${{ github.repository_owner == 'gardener' }}
+    if: ${{ github.repository_owner == 'playground-nils' }}
     uses: gardener/cc-utils/.github/workflows/upgrade-dependencies.yaml@v1
     permissions:
       contents: read
